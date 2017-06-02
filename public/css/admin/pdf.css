@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
+
+
+body {
+    padding: 0 15px 30px 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.heading {
+    padding: 20px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 1px solid #000;
+}
+
+    .heading .heading-line-1 {
+        font-size: 28px;
+        font-weight: normal;
+    }
+
+    .heading .heading-line-2 {
+        font-size: 30px;
+        font-weight: 800;
+    }
+
+    .heading .heading-line-3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .heading .contact {
+        display: inline-block;
+        margin-right: 25px;
+        margin-top: 5px;
+    }
+
+    .heading .co {
+        display: inline-block;
+        margin-left: 25px;
+        margin-top: 5px;
+    }
+
+.pdf-body {
+    padding: 30px 0;
+    font-size: 16px;
+}
+    .pdf-body table{
+        width: 100%
+    }
+
+    .pdf-body tr .label {
+        width: 50px;
+        text-align: left;
+    }
+
+    .pdf-body tr .label-separator {
+        width: 20px;
+        text-align: center;
+    }
+
+    .pdf-body tr .main {
+        width: calc(100% - 190px);
+    }
+
+    .pdf-body tr .end {
+        width: 120px;
+        text-align: right;
+    }
+
+    .pdf-body .date-row td {
+        padding-bottom: 5px;
+    }
+
+    .pdf-body .customer-row td {
+        padding-bottom: 25px;
+    }
+
+    .pdf-body .title-row td {
+        padding-bottom: 2px;
+    }
+
+    .pdf-body .title-row .title {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #000;
+    }
+
+    .pdf-body .amount-header td{
+        padding-bottom: 5px;
+    }
+
+    .pdf-body .amount-header .end{
+        text-decoration: underline;
+    }
+
+    .pdf-body .item-row td {
+        vertical-align: text-top;
+        padding-bottom: 25px;
+    }
+
+    .pdf-body .item-row .label {
+        text-align: right;
+    }
+
+    .pdf-body .total-row .main {
+        text-align: right;
+        text-transform: uppercase;
+    }
+
+    .pdf-body .total-row .total{
+        font-weight: bold;
+        display: inline-block;
+        padding: 5px 0 5px 10px;
+        border-top: 2px solid #000;
+        border-bottom: 2px double #000;
+    }

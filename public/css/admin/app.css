@@ -1,0 +1,106 @@
+#admin-wrapper .sub-title {
+    color: #F0677C;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#admin-wrapper .service-item {
+    margin-bottom: 15px;
+}
+
+#admin-wrapper .material-item .main-data {
+    margin-bottom: 0px;
+}
+
+#admin-wrapper .material-list {
+    margin-bottom: 10px;
+}
+
+#admin-wrapper .service-list .service {
+    line-height: 22px;
+    margin-bottom: 0;
+}
+
+#admin-wrapper .btn {
+    border-radius: 5px;
+}
+
+#admin-wrapper .btn-control {
+    margin-right: 5px;
+}
+
+#admin-wrapper .btn i {
+    margin-right: 2px;
+}
+
+#admin-wrapper .data-item .price {
+    font-weight: 900;
+    color: #F0677C;
+}
+
+#admin-wrapper .material-list .material {
+    line-height: 22px;
+}
+
+#admin-wrapper .quotation-preview {
+    border: 1px solid #EEEEEE;
+    min-height: 700px;
+}
+
+#admin-wrapper .data-item a{
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+
+#admin-wrapper .preview-obj {
+    min-height: calc(100% * 1.4151260504);
+}
+
+#admin-wrapper .dataTables_filter label {
+    color: #fff;
+}
+
+#admin-wrapper .dataTables_filter label input {
+    border: 1px solid #eeeeee;
+    margin-left: -47px;
+    margin-bottom: 10px;
+    color: #000;
+}
+#admin-wrapper .dataTables_filter label input:focus {
+    outline: none;
+}
+
+#admin-wrapper .table-control a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#admin-wrapper .table-control form {
+    display: inline-block
+}
+
+#admin-wrapper .table-control button {
+    border: none;
+    padding: 0;
+    background: none;
+    margin-left: 10px;
+    color: #337ab7;
+}
+
+#admin-wrapper .table-control button:hover {
+    color: #23527c;
+}
+
+#admin-wrapper table a:hover {
+    text-decoration: none;
+}
+
+#admin-wrapper table a .label:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
