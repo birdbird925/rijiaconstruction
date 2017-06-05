@@ -63,11 +63,11 @@
             margin-bottom: 5px;
         }
 
-        /*.heading .heading-footer {
+        .heading .heading-footer {
             margin-top: 5px;
         }
 
-            .heading .heading-footer span {
+            /*.heading .heading-footer span {
                 width: 25px;
                 display: inline-block;
             }*/
