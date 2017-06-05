@@ -7,7 +7,7 @@
         <![endif]-->
     <title>@stack('page-title') PDF | RI JIA CONSTRUCTION</title>
     <style type="text/css">
-    /*@font-face {
+    @font-face {
         font-family: 'msyh';
         font-style: normal;
         font-weight: normal;
@@ -30,9 +30,9 @@
         font-style: normal;
         font-weight: 800;
         src: url(/fonts/OpenSans-ExtraBold.ttf) format('truetype');
-    }*/
+    }
 
-    body {
+    /*body {
         padding: 0;
         font-family: 'Open Sans', sans-serif;
     }
@@ -82,7 +82,7 @@
         margin-top: 25px;
         padding-top: 10px;
         border-top: 1px solid #000;
-    }
+    }*/
     @yield('style')
     </style>
 </head>
