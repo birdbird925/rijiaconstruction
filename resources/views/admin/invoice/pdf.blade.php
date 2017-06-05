@@ -115,6 +115,7 @@
     }
 
     .total-row .total {
+        padding-top: 6px
         font-weight: bold;
     }
 
