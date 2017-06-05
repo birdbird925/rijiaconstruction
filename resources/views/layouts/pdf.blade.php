@@ -46,13 +46,13 @@
         border-bottom: 1px solid #000;
     }
 
-        /*.heading .heading-line-1 {
+        .heading .heading-line-1 {
             font-family: 'msyh';
             font-size: 20px;
             font-weight: normal;
-        }*/
+        }
 
-        .heading .heading-line-2 {
+        /*.heading .heading-line-2 {
             font-size: 24px;
             font-weight: 800;
             font-family: 'Open Sans ExtralBold', sans-serif;
@@ -70,7 +70,7 @@
             .heading .heading-footer span {
                 width: 25px;
                 display: inline-block;
-            }
+            }*/
 
 
     .pdf-body {
