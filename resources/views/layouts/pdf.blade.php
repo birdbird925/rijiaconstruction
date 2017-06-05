@@ -52,13 +52,13 @@
             font-weight: normal;
         }
 
-        /*.heading .heading-line-2 {
+        .heading .heading-line-2 {
             font-size: 24px;
             font-weight: 800;
             font-family: 'Open Sans ExtralBold', sans-serif;
         }
 
-        .heading .heading-line-3 {
+        /*.heading .heading-line-3 {
             font-size: 14px;
             margin-bottom: 5px;
         }
