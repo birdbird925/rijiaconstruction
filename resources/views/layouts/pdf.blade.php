@@ -30,7 +30,7 @@
         font-style: normal;
         font-weight: 800;
         src: url(/fonts/OpenSans-ExtraBold.ttf) format('truetype');
-    }
+    }*/
 
     body {
         padding: 0;
@@ -82,7 +82,7 @@
         margin-top: 25px;
         padding-top: 10px;
         border-top: 1px solid #000;
-    }*/
+    }
     @yield('style')
     </style>
 </head>
