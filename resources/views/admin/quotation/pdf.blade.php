@@ -45,7 +45,7 @@
     }
 
     .quotation-table .amount-header .end{
-        text-decoration: underline;
+        {{-- text-decoration: underline; --}}
     }
 
     .quotation-table .item-row td {
