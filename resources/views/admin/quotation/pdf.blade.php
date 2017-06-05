@@ -71,7 +71,7 @@
         float: right;
         font-weight: bold;
         display: inline-block;
-        padding-top: 8px
+        padding-top: 6px
         /*padding: 5px 0 5px 10px;
         border-top: 2px solid #000;
         border-bottom: 2px double #000;*/
