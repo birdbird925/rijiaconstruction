@@ -80,4 +80,13 @@
   'msyh' => array(
     'normal' => $fontDir . '/d924de5b523e2c4e6d3ca4da1a373627',
   ),
+  'open sans' => array(
+    'normal' => $fontDir . '/1e6a17652eacdd7c261a0c11d91408fa',
+  ),
+  'open sans bold' => array(
+    'bold' => $fontDir . '/9011d8d2d818022c47ae02c8cbf01994',
+  ),
+  'open sans extralbold' => array(
+    'normal' => $fontDir . '/29c3c01c521216a06d1853aa664206aa',
+  ),
 ) ?>

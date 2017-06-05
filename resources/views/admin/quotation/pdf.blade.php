@@ -45,7 +45,7 @@
     }
 
     .quotation-table .amount-header .end{
-        {{-- text-decoration: underline; --}}
+        border-bottom: 1px solid #000
     }
 
     .quotation-table .item-row td {
@@ -71,6 +71,7 @@
         float: right;
         font-weight: bold;
         display: inline-block;
+        padding-top: 5px
         /*padding: 5px 0 5px 10px;
         border-top: 2px solid #000;
         border-bottom: 2px double #000;*/
