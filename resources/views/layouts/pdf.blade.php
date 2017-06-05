@@ -58,12 +58,12 @@
             font-family: 'Open Sans ExtralBold', sans-serif;
         }
 
-        /*.heading .heading-line-3 {
+        .heading .heading-line-3 {
             font-size: 14px;
             margin-bottom: 5px;
         }
 
-        .heading .heading-footer {
+        /*.heading .heading-footer {
             margin-top: 5px;
         }
 
