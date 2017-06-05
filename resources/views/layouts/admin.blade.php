@@ -54,6 +54,7 @@
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a class="@stack('quotation-menu')" href="/admin/quotation">Quotation</a></li>
                             <li><a class="@stack('invoice-menu')" href="/admin/invoice">Invoice</a></li>
+                            <li><a class="@stack('demo')" href="/admin/demo">Demo</a></li>
                             <li><a class="@stack('account-menu')" href="/admin/account">Account</a></li>
                             <li><a href="/logout">Logout</a></li>
                         </ul>

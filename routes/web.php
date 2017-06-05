@@ -26,8 +26,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('quotation/preview', 'QuotationController@preview');
     Route::get('quotation/{id}/pdf', 'QuotationController@pdf');
     Route::get('quotation/{id}/print', 'QuotationController@printPDF');
+    // invoice
     Route::resource('invoice', 'InvoiceController', ['except' => 'show']);
     Route::get('invoice/preview', 'InvoiceController@preview');
     Route::get('invoice/{id}/pdf', 'InvoiceController@pdf');
     Route::get('invoice/{id}/print', 'InvoiceController@printPDF');
+    // demo
+    Route::get('demo', function() {
+        return view('admin.demo');
+    });
 });
