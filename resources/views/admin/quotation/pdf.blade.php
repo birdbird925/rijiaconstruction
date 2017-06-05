@@ -45,8 +45,7 @@
     }
 
     .quotation-table .amount-header .end .amount-header{
-        line-height: 20px;
-        text-decoration: underline;
+        border-bottom: 1px solid #000
     }
 
     .quotation-table .item-row td {
