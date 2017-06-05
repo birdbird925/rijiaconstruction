@@ -68,7 +68,7 @@
         }
 
             .heading .heading-footer span {
-                /*width: 25px;*/
+                width: 5px;
                 display: inline-block;
             }
 
