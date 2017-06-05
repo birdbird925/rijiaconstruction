@@ -44,11 +44,14 @@
         padding-bottom: 5px;
     }
 
+    .quotation-table .amount-header .end {
+        text-align: right;
+    }
+
     .quotation-table .amount-header .end .amount-header{
-        float: right;
+        display: inline-block;
         padding-bottom: 30px
         text-align: right;
-        display: inline-block;
         border-bottom: 1px solid #000;
     }
 
