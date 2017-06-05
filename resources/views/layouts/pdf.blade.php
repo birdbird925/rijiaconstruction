@@ -32,12 +32,12 @@
         src: url(/fonts/OpenSans-ExtraBold.ttf) format('truetype');
     }
 
-    /*body {
+    body {
         padding: 0;
         font-family: 'Open Sans', sans-serif;
     }
 
-    .heading {
+    /*.heading {
         padding-bottom: 20px;
         text-align: center;
         font-family: 'Open Sans Bold', sans-serif;
