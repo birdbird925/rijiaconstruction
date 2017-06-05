@@ -68,7 +68,7 @@
         }
 
             .heading .heading-footer span {
-                width: 5px;
+                margin-left: 25px;
                 display: inline-block;
             }
 
@@ -94,8 +94,9 @@
         <div class="address">No.38, Jalan 21, Taman Sri Jelok, 43000 Kajang, Selangor Darul Ehsan</div>
         <div class="heading-footer">
             Tel: 03-87405018
-            <span></span>
-            (Co.No: 00146542-H)
+            <span>
+                (Co.No: 00146542-H)
+            </span>
         </div>
     </div>
     <div class="pdf-body">
