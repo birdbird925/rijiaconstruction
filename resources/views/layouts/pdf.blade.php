@@ -11,25 +11,25 @@
         font-family: 'msyh';
         font-style: normal;
         font-weight: normal;
-        src: url(/fonts/msyh.ttf) format('truetype');
+        src: url(http://188.166.215.33/fonts/msyh.ttf) format('truetype');
     }
     @font-face {
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: normal;
-        src: url(/fonts/OpenSans-Regular.ttf) format('truetype');
+        src: url(http://188.166.215.33/fonts/OpenSans-Regular.ttf) format('truetype');
     }
     @font-face {
         font-family: 'Open Sans Bold';
         font-style: normal;
         font-weight: bold;
-        src: url(/fonts/OpenSans-Bold.ttf) format('truetype');
+        src: url(http://188.166.215.33/fonts/OpenSans-Bold.ttf) format('truetype');
     }
     @font-face {
         font-family: 'Open Sans ExtralBold';
         font-style: normal;
         font-weight: 800;
-        src: url(/fonts/OpenSans-ExtraBold.ttf) format('truetype');
+        src: url(http://188.166.215.33/fonts/OpenSans-ExtraBold.ttf) format('truetype');
     }
 
     body {
@@ -89,7 +89,7 @@
         <div class="address">No.38, Jalan 21, Taman Sri Jelok, 43000 Kajang, Selangor Darul Ehsan</div>
         <div class="heading-footer">
             Tel: 03-87405018
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
             (Co.No: 00146542-H)
         </div>
     </div>
