@@ -78,7 +78,7 @@
 @endsection
 
 @section('content')
-    {{-- <table class="quotation-table">
+    <table class="quotation-table">
         <tr class="date-row">
             <td class="label">Date</td>
             <td class="label-separator">:</td>
@@ -126,11 +126,11 @@
             </td>
             <td class="end"></td>
         </tr>
-    </table> --}}
+    </table>
 @endsection
 
 @section('footer')
-    {{-- <table class="quotation-table">
+    <table class="quotation-table">
         <tr class="total-row">
             <td class="label"></td>
             <td class="label-separator"></td>
@@ -143,5 +143,5 @@
         <script type="text/javascript">
         this.print(true);
         </script>
-    @endif --}}
+    @endif
 @endsection

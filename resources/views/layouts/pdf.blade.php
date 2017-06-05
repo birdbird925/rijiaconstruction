@@ -82,12 +82,12 @@
         margin-top: 25px;
         padding-top: 10px;
         border-top: 1px solid #000;
-    }
-    @yield('style')*/
+    }*/
+    @yield('style')
     </style>
 </head>
 <body>
-    {{-- <div class="heading">
+    <div class="heading">
         <div class="heading-line-1">日嘉建築装修工程</div>
         <div class="heading-line-2">RI JIA CONSTRUCTION</div>
         <div class="heading-line-3">CONTRACTOR OF HOUSES, RENOVATION & ETC</div>
@@ -103,5 +103,5 @@
     </div>
     <div class="footer">
         @yield('footer')
-    </div> --}}
+    </div>
 </body>
