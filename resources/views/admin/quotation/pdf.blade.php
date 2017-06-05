@@ -50,7 +50,6 @@
 
     .quotation-table .amount-header .end .amount-header{
         display: inline-block;
-        padding-bottom: 30px
         text-align: right;
         border-bottom: 1px solid #000;
     }
@@ -109,7 +108,7 @@
             <td class="label"></td>
             <td class="label-separator"></td>
             <td class="main"></td>
-            <td class="end"><div class="amount-header">Amount</div></td>
+            <td class="end">Amount</td>
         </tr>
         @foreach($services as $service)
             <tr class="item-row">
