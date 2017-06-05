@@ -50,7 +50,7 @@
             font-family: 'msyh';
             font-size: 20px;
             font-weight: normal;
-        }
+        }*/
 
         .heading .heading-line-2 {
             font-size: 24px;
@@ -70,7 +70,7 @@
             .heading .heading-footer span {
                 width: 25px;
                 display: inline-block;
-            }*/
+            }
 
 
     .pdf-body {
