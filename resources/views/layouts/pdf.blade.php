@@ -37,7 +37,7 @@
         font-family: 'Open Sans', sans-serif;
     }
 
-    /*.heading {
+    .heading {
         padding-bottom: 20px;
         text-align: center;
         font-family: 'Open Sans Bold', sans-serif;
@@ -73,7 +73,7 @@
             }
 
 
-    .pdf-body {
+    /*.pdf-body {
         padding: 20px 0;
         font-size: 14px;
     }
