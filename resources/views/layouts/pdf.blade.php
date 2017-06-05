@@ -46,7 +46,7 @@
         border-bottom: 1px solid #000;
     }
 
-        .heading .heading-line-1 {
+        /*.heading .heading-line-1 {
             font-family: 'msyh';
             font-size: 20px;
             font-weight: normal;
@@ -70,10 +70,10 @@
             .heading .heading-footer span {
                 width: 25px;
                 display: inline-block;
-            }
+            }*/
 
 
-    /*.pdf-body {
+    .pdf-body {
         padding: 20px 0;
         font-size: 14px;
     }
@@ -82,7 +82,7 @@
         margin-top: 25px;
         padding-top: 10px;
         border-top: 1px solid #000;
-    }*/
+    }
     @yield('style')
     </style>
 </head>
