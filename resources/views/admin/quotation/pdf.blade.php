@@ -45,6 +45,7 @@
     }
 
     .quotation-table .amount-header .end .amount-header{
+        text-align: right;
         display: inline-block;
         border-bottom: 1px solid #000;
     }
