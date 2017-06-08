@@ -32,9 +32,9 @@
                 <label>Title:</label>
                 <input type="text" name="title" class="form-control" value="House Renovation Quotation" default="House Renovation Quotation" required>
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <input type="checkbox" id="material-included" name="material-included" value="true" checked><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>
-            </div>
+            </div> --}}
             <hr>
             <div class="sub-title">Services</div>
             <div class="service-list data-list"></div>
