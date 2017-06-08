@@ -15,6 +15,7 @@ class CreateInvoicesTable extends Migration
             $table->string('company_line_1')->nullable();
             $table->string('company_line_2')->nullable();
             $table->string('purchase_order')->nullable();
+            $table->decimal('deposit', 7, 2)->nullable();
             $table->tinyInteger('material_included')->default(1);
             $table->timestamp('date');
 

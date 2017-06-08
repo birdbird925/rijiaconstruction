@@ -34,6 +34,12 @@ class QuotationController extends Controller
             'date' => Carbon::createFromFormat('m/d/Y', request('date')),
             'to' => request('customer'),
             'title' => request('title'),
+            'address_line_1' => request('address_line_1'),
+            'address_line_2' => request('address_line_2'),
+            'email' => request('email'),
+            'tel' => request('tel'),
+            'note' => request('note'),
+            'material_included' => request('material-included') == 'true' ? 1 : 0,
             'status' => 0,
         ]);
 
@@ -77,6 +83,12 @@ class QuotationController extends Controller
         $quotation->date = Carbon::createFromFormat('m/d/Y', request('date'));
         $quotation->to = request('customer');
         $quotation->title = request('title');
+        $quotation->address_line_1 = request('address_line_1');
+        $quotation->address_line_2 = request('address_line_2');
+        $quotation->email = request('email');
+        $quotation->tel = request('tel');
+        $quotation->note = request('note');
+        $quotation->material_included = request('material-included') == 'true' ? 1 : 0;
         $quotation->update();
 
         DB::table('services')->where('form_id', $quotation->id)->where('form_type', 'App\Quotation')->delete();
@@ -127,12 +139,27 @@ class QuotationController extends Controller
                 $total += $service['price'];
         }
 
+        $materialTotal = 0;
+        $materials = request()->has('material') ? request('material') : [];
+        if(request('material-included') == 'false'){
+            foreach($materials as $material){
+                $materialTotal += ($material['price'] * $material['quantity']);
+            }
+            $total += $materialTotal;
+        }
+
         $data = [
             'date' => request('date') ? Carbon::createFromFormat('m/d/Y', request('date'))->format('d F, Y') : '',
             'customer' => request('customer'),
             'title' => request('title'),
+            'address1' => request('address_line_1') ? request('address_line_1') : '',
+            'address2' => request('address_line_2') ? request('address_line_2') : '',
+            'email' => request('email') ? request('email') : '',
+            'tel' => request('tel') ? request('tel') : '',
+            'note' => request('note') ? request('note') : '',
             'services' => request('service') ? request('service') : [],
             'materials' => request('material') ? request('material') : [],
+            'materialTotal' => $materialTotal == 0 ? '' : number_format($materialTotal, 2),
             'total' => number_format($total, 2),
         ];
         $pdf = PDF::loadView('admin.quotation.pdf', $data);
@@ -146,8 +173,14 @@ class QuotationController extends Controller
             'date' => Carbon::createFromFormat('Y-m-d H:i:s', $quotation->date)->format('d F, Y'),
             'customer' => $quotation->to,
             'title' => $quotation->title,
+            'address1' => $quotation->address_line_1 ? $quotation->address_line_1 : '',
+            'address2' => $quotation->address_line_2 ? $quotation->address_line_2 : '',
+            'email' => $quotation->email ? $quotation->email : '',
+            'tel' => $quotation->tel ? $quotation->tel : '',
+            'note' => $quotation->note ? $quotation->note : '',
             'services' => $quotation->services ? $quotation->services->toArray() : [],
             'materials' => $quotation->materials ? $quotation->materials->toArray() : [],
+            'materialTotal' => !$quotation->material_included ? number_format($quotation->materialTotal(),2) : '',
             'total' => number_format($quotation->total(), 2),
         ];
         $pdf = PDF::loadView('admin.quotation.pdf', $data);
@@ -161,8 +194,14 @@ class QuotationController extends Controller
             'date' => Carbon::createFromFormat('Y-m-d H:i:s', $quotation->date)->format('d F, Y'),
             'customer' => $quotation->to,
             'title' => $quotation->title,
+            'address1' => $quotation->address_line_1 ? $quotation->address_line_1 : '',
+            'address2' => $quotation->address_line_2 ? $quotation->address_line_2 : '',
+            'email' => $quotation->email ? $quotation->email : '',
+            'tel' => $quotation->tel ? $quotation->tel : '',
+            'note' => $quotation->note ? $quotation->note : '',
             'services' => $quotation->services ? $quotation->services->toArray() : [],
             'materials' => $quotation->materials ? $quotation->materials->toArray() : [],
+            'materialTotal' => !$quotation->material_included ? $quotation->materialTotal() : '',
             'total' => number_format($quotation->total(), 2),
             'print' => 1,
         ];

@@ -40,7 +40,11 @@
                 <input type="text" name="po" class="form-control">
             </div>
             <div class="form-group">
-                <input type="checkbox" id="material-included" name="material-included" value="true" checked><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>
+                <label>Deposit:</label>
+                <input type="number" name="deposit" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="material-included" name="material-included" value="{{$quotation->material_included ? 'true' : 'false'}}" {{$quotation->material_included ? 'checked' : 'false'}}><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>
             </div>
             <hr>
             <div class="sub-title">Services</div>

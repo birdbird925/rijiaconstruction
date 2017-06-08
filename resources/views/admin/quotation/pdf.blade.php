@@ -30,6 +30,17 @@
 
     .quotation-table .customer-row td {
         padding-bottom: 15px;
+        vertical-align: text-top;
+    }
+
+    .quotation-table .customer-row .main {
+        width: calc(100% - 500px);
+        line-height: 14px;
+        padding-top: 3px;
+    }
+
+    .quotation-table .customer-row .end {
+        width: 300px;
     }
 
     .quotation-table .title-row .title {
@@ -95,8 +106,17 @@
         <tr class="customer-row">
             <td class="label">To</td>
             <td class="label-separator">:</td>
-            <td class="main">{{$customer ? str_replace("{~and~}", "&", $customer) : 'Mr. Lee'}}</td>
-            <td class="end"></td>
+            <td class="main">
+                {{$customer ? str_replace("{~and~}", "&", $customer) : 'Mr. Lee'}}
+                {!! $tel ? '<br>'.str_replace("{~and~}", "&", $tel).' ' : '' !!}
+                {!! $email ? '<br>'.str_replace("{~and~}", "&", $email) : '' !!}
+            </td>
+            <td class="end">
+                @if($address1 || $address2)
+                    {!! str_replace("{~and~}", "&", $address1) !!}
+                    {!! '<br>'.str_replace("{~and~}", "&", $address2) !!}
+                @endif
+            </td>
         </tr>
         <tr class="title-row">
             <td class="label">Re</td>
@@ -131,7 +151,9 @@
                     @endif
                 @endforeach
             </td>
-            <td class="end"></td>
+            <td class="end">
+                {{$materialTotal}}
+            </td>
         </tr>
     </table>
 @endsection
@@ -145,6 +167,10 @@
             <td class="end"><span class="total">{{$total ? $total : '0.00'}}</span></td>
         </tr>
     </table>
+
+    @if($note)
+        {!! $note !!}
+    @endif
 
     @if(isset($print))
         <script type="text/javascript">

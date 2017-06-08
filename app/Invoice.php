@@ -43,7 +43,7 @@ class Invoice extends Model
 
     public function priceInText()
     {
-        $priceInText = preg_replace('/,+/', '', Terbilang::make($this->total(), ' ONLY'));
+        $priceInText = preg_replace('/,+/', '', Terbilang::make($this->total() - $this->deposit, ' ONLY'));
         return strtoupper($priceInText);
     }
 

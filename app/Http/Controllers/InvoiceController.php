@@ -43,6 +43,7 @@ class InvoiceController extends Controller
             'company_line_1' => request('company_line_1'),
             'company_line_2' => request('company_line_2'),
             'purchase_order' => request('po'),
+            'deposit' => request('deposit'),
             'material_included' => request('material-included') == 'true' ? 1 : 0,
         ]);
 
@@ -93,6 +94,7 @@ class InvoiceController extends Controller
         $invoice->company_line_1 = request('company_line_1');
         $invoice->company_line_2 = request('company_line_2');
         $invoice->purchase_order = request('po');
+        $invoice->deposit = request('deposit');
         $invoice->material_included = request('material-included') == 'true' ? 1 : 0;
         $invoice->update();
 
@@ -150,14 +152,18 @@ class InvoiceController extends Controller
 
         $materialTotal = 0;
         $materials = request()->has('material') ? request('material') : $quotation->materials->toArray();
-        if(request('material-included') == 'false'){
+        if(request('material-included') == 'true') {
+            $materialTotal = 0;
+        }
+        else if(request('material-included') == 'false' || (!request()->has('material-included') && !$quotation->material_included)){
             foreach($materials as $material){
                 $materialTotal += ($material['price'] * $material['quantity']);
             }
             $total += $materialTotal;
         }
 
-        $priceInText = preg_replace('/,+/', '', Terbilang::make($total, ' ONLY'));
+        $deposit = request('deposit') ? request('deposit') : 0;
+        $priceInText = preg_replace('/,+/', '', Terbilang::make($total - $deposit, ' ONLY'));
         $priceInText = strtoupper($priceInText);
         $data = [
             'id' => 'NEW',
@@ -166,9 +172,10 @@ class InvoiceController extends Controller
             'company1' => request('company_line_1') ? request('company_line_1') : '',
             'company2' => request('company_line_2') ? request('company_line_2') : '',
             'po' => request('po') ? request('po') : '',
+            'deposit' => $deposit,
             'services' => $services,
             'materials' => $materials,
-            'materialTotal' => $materialTotal == 0 ? 0 : number_format($materialTotal, 2),
+            'materialTotal' => $materialTotal == 0 ? '' : number_format($materialTotal, 2),
             'total' => number_format($total, 2),
             'priceInText' => $priceInText
         ];
@@ -186,11 +193,12 @@ class InvoiceController extends Controller
             'customer' => $invoice->to,
             'company1' => $invoice->company_line_1,
             'company2' => $invoice->company_line_2,
-            'po' => $invoice->po,
+            'po' => $invoice->purchase_order,
             'services' => $invoice->services ? $invoice->services->toArray() : [],
             'materials' => $invoice->materials ? $invoice->materials->toArray() : [],
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
             'total' => number_format($invoice->total(), 2),
+            'deposit' => $invoice->deposit,
             'priceInText' => $invoice->priceInText()
         ];
         $pdf = PDF::loadView('admin.invoice.pdf', $data);
@@ -206,11 +214,12 @@ class InvoiceController extends Controller
             'customer' => $invoice->to,
             'company1' => $invoice->company_line_1,
             'company2' => $invoice->company_line_2,
-            'po' => $invoice->po,
+            'po' => $invoice->purchase_order,
             'services' => $invoice->services ? $invoice->services->toArray() : [],
             'materials' => $invoice->materials ? $invoice->materials->toArray() : [],
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
             'total' => number_format($invoice->total(), 2),
+            'deposit' => $invoice->deposit,
             'priceInText' => $invoice->priceInText(),
             'print' => 1,
         ];

@@ -32,9 +32,27 @@
                 <label>Title:</label>
                 <input type="text" name="title" class="form-control" value="House Renovation Quotation" default="House Renovation Quotation" required>
             </div>
-            {{-- <div class="form-group">
+            <div class="form-group">
+                <label>Address:</label>
+                <input type="text" name="address_line_1" class="form-control">
+                <br>
+                <input type="text" name="address_line_2" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Tel:</label>
+                <input type="text" name="tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Note:</label>
+                <textarea name="note" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
                 <input type="checkbox" id="material-included" name="material-included" value="true" checked><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>
-            </div> --}}
+            </div>
             <hr>
             <div class="sub-title">Services</div>
             <div class="service-list data-list"></div>

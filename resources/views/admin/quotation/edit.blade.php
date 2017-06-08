@@ -35,6 +35,27 @@
                 <label>Title:</label>
                 <input type="text" name="title" class="form-control" value="{{$quotation->title}}" default="{{$quotation->title}}" required>
             </div>
+            <div class="form-group">
+                <label>Address:</label>
+                <input type="text" name="address_line_1" class="form-control" value="{{$quotation->address_line_1}}">
+                <br>
+                <input type="text" name="address_line_2" class="form-control" value="{{$quotation->address_line_2}}">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" class="form-control" value="{{$quotation->email}}">
+            </div>
+            <div class="form-group">
+                <label>Tel:</label>
+                <input type="text" name="tel" class="form-control" value="{{$quotation->tel}}">
+            </div>
+            <div class="form-group">
+                <label>Note:</label>
+                <textarea name="note" class="form-control" rows="3">{!!$quotation->note!!}</textarea>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="material-included" name="material-included" value="{{$quotation->material_included ? 'true' : 'false'}}" {{$quotation->material_included ? 'checked' : 'false'}}><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>
+            </div>
             <hr>
             <div class="sub-title">Services</div>
             <div class="service-list data-list">

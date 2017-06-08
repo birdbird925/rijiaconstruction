@@ -26,6 +26,9 @@ class Quotation extends Model
         $total = 0;
         foreach($this->services as $services)
             $total += $services->price;
+
+        if(!$this->material_included)
+            $total += $this->materialTotal();
         return $total;
     }
 
@@ -34,28 +37,11 @@ class Quotation extends Model
         return '#'.str_pad($this->id, 7, '0', STR_PAD_LEFT);
     }
 
-    public function previewLink()
+    public function materialTotal()
     {
-        $url = '/admin/quotation/preview?date='.Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->format('m/d/Y').'&customer='.$this->to.'&title='.$this->title;
-
-        if($this->services != null){
-            foreach($this->services as $key=>$service) {
-                $parameter = '&service['.$key.']';
-                $url .= $parameter.'[text]='.$service->text;
-                $url .= $parameter.'[price]='.$service->price;
-            }
-        }
-
-        if($this->materials != null) {
-            foreach($this->materials as $key=>$material) {
-                $parameter = '&material['.$key.']';
-                $url .= $parameter.'[text]='.$material->text;
-                $url .= $parameter.'[quantity]='.$material->quantity;
-                $url .= $parameter.'[unit]='.$material->unit;
-                $url .= $parameter.'[price]='.$material->price;
-            }
-        }
-
-        return $url;
+        $total = 0;
+        foreach($this->materials as $material)
+            $total += ($material->quantity * $material->price);
+        return $total;
     }
 }

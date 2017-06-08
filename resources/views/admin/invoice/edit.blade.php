@@ -43,6 +43,10 @@
                 <input type="text" name="po" class="form-control" value="{{$invoice->purchase_order}}">
             </div>
             <div class="form-group">
+                <label>Deposit:</label>
+                <input type="number" name="deposit" class="form-control" value={{$invoice->deposit}}>
+            </div>
+            <div class="form-group">
                 <input type="checkbox" id="material-included" name="material-included" value="{{$invoice->material_included ? 'true' : 'false'}}" {{$invoice->material_included ? 'checked' : 'false'}}><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>
             </div>
             <hr>

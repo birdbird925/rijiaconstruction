@@ -13,6 +13,12 @@ class CreateQuotationsTable extends Migration
             $table->timestamp('date');
             $table->string('to');
             $table->string('title');
+            $table->string('address_line_1')->nullable();
+            $table->string('address_line_2')->nullable();
+            $table->string('email')->nullable();
+            $table->string('tel')->nullable();
+            $table->text('note')->nullable();
+            $table->tinyInteger('material_included')->default(1);
             $table->tinyInteger('status');
         });
     }

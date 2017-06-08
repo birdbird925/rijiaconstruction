@@ -28,7 +28,7 @@ $(function() {
     function updatePreview(){
         var url  = '/admin/'+$('#main-form').attr('data-type');
             url += '/preview?';
-        $("#main-form input").each(function(){
+        $("#main-form input, #main-form textarea").each(function(){
             var input = $(this);
             var value = input.val();
             if(input.attr('name') != '_token' && input.attr('type') != 'submit' && input.attr('name') != '_method') {
@@ -53,7 +53,7 @@ $(function() {
         updatePreview();
     });
 
-    $('input[name=title], input[name=customer], input[name=company_line_1], input[name=company_line_2], input[name=po]').on('change', function() {
+    $('input[name=title], input[name=customer], input[name=company_line_1], input[name=company_line_2], input[name=po], input[name=address_line_1], input[name=address_line_2], input[name=email], input[name=tel], textarea[name=note], input[name=deposit]').on('change', function() {
         var value = $(this).val();
         var defaultValue = $(this).attr('default');
         if(value == '')
