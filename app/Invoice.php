@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Terbilang;
 
 class Invoice extends Model
 {
@@ -26,7 +27,24 @@ class Invoice extends Model
         $total = 0;
         foreach($this->services as $services)
             $total += $services->price;
+
+        if(!$this->material_included)
+            $total += $this->materialTotal();
         return $total;
+    }
+
+    public function materialTotal()
+    {
+        $total = 0;
+        foreach($this->materials as $material)
+            $total += ($material->quantity * $material->price);
+        return $total;
+    }
+
+    public function priceInText()
+    {
+        $priceInText = preg_replace('/,+/', '', Terbilang::make($this->total(), ' ONLY'));
+        return strtoupper($priceInText);
     }
 
     public function refNumber()

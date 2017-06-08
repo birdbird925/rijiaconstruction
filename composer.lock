@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d2aa4f38363294760cc3fe73a80b2ca",
-    "content-hash": "4f00dfe46c8440e7849070f77f2907aa",
+    "hash": "6a457e6d404fa8105ab5d1ff2b79a0ea",
+    "content-hash": "249b279e01bda6cfa5d92c402f7293cb",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1590,6 +1590,52 @@
                 "uuid"
             ],
             "time": "2017-03-26 20:37:53"
+        },
+        {
+            "name": "riskihajar/terbilang",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/riskihajar/terbilang.git",
+                "reference": "175a26159b412801673fd780e6e92447b4b9cb6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/riskihajar/terbilang/zipball/175a26159b412801673fd780e6e92447b4b9cb6a",
+                "reference": "175a26159b412801673fd780e6e92447b4b9cb6a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.2||~5",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Riskihajar\\Terbilang\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "riskihajar",
+                    "email": "riskihajar@gmail.com",
+                    "homepage": "http://riskihajar.com"
+                }
+            ],
+            "description": "Convert number & date to words in any language for Laravel 4 | 5",
+            "homepage": "https://github.com/riskihajar/terbilang",
+            "keywords": [
+                "date to words",
+                "laravel",
+                "number to roman",
+                "number to words",
+                "terbilang"
+            ],
+            "time": "2017-05-30 05:57:51"
         },
         {
             "name": "sabberworm/php-css-parser",

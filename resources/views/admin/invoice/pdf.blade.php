@@ -51,6 +51,7 @@
     }
 
     #top-section .customer{
+        padding-top: 4px
         font-size: 16px;
         font-weight: bold;
     }
@@ -108,14 +109,13 @@
     }
 
     .total-row .total-label {
-        vertical-align: text-top;
+        vertical-align: text-bottom;
         display: inline-block;
         text-transform: uppercase;
         margin-right: 5px;
     }
 
     .total-row .total {
-        padding-top: 6px
         font-weight: bold;
     }
 
@@ -225,7 +225,7 @@
             <td class="label-separator"></td>
             <td class="main">
                 <div class="price-in-text">
-                    EIGHT THOUSAND AND FIVE HUNDRED ONLY.
+                    {{$priceInText}}
                 </div>
                 <div class="payment-info">
                     Ri Jia Construction A/C No. (Maybank) 012026317103

@@ -9,6 +9,7 @@ use App\Quotation;
 use App\Service;
 use App\Material;
 use Carbon\Carbon;
+use Terbilang;
 use PDF;
 
 class InvoiceController extends Controller
@@ -156,6 +157,8 @@ class InvoiceController extends Controller
             $total += $materialTotal;
         }
 
+        $priceInText = preg_replace('/,+/', '', Terbilang::make($total, ' ONLY'));
+        $priceInText = strtoupper($priceInText);
         $data = [
             'id' => 'NEW',
             'date' => request('date') ? request('date') : '',
@@ -165,9 +168,11 @@ class InvoiceController extends Controller
             'po' => request('po') ? request('po') : '',
             'services' => $services,
             'materials' => $materials,
-            'materialTotal' => $materialTotal == 0 ? '' : number_format($materialTotal, 2),
+            'materialTotal' => $materialTotal == 0 ? 0 : number_format($materialTotal, 2),
             'total' => number_format($total, 2),
+            'priceInText' => $priceInText
         ];
+
         $pdf = PDF::loadView('admin.invoice.pdf', $data);
         return $pdf->stream('inovice.pdf');
     }
@@ -186,6 +191,7 @@ class InvoiceController extends Controller
             'materials' => $invoice->materials ? $invoice->materials->toArray() : [],
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
             'total' => number_format($invoice->total(), 2),
+            'priceInText' => $invoice->priceInText()
         ];
         $pdf = PDF::loadView('admin.invoice.pdf', $data);
         return $pdf->stream('invoice.pdf');
@@ -205,6 +211,7 @@ class InvoiceController extends Controller
             'materials' => $invoice->materials ? $invoice->materials->toArray() : [],
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
             'total' => number_format($invoice->total(), 2),
+            'priceInText' => $invoice->priceInText(),
             'print' => 1,
         ];
         $pdf = PDF::loadView('admin.invoice.pdf', $data);
