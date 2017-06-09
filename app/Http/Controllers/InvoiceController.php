@@ -197,12 +197,14 @@ class InvoiceController extends Controller
             'services' => $invoice->services ? $invoice->services->toArray() : [],
             'materials' => $invoice->materials ? $invoice->materials->toArray() : [],
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
-            'total' => number_format($invoice->total(), 2),
+            'total' => $invoice->total(),
             'deposit' => $invoice->deposit,
             'priceInText' => $invoice->priceInText()
         ];
-        $pdf = PDF::loadView('admin.invoice.pdf', $data);
-        return $pdf->stream('invoice.pdf');
+        dd(number_format($invoice->total() - $invoice->deposit , 2));
+
+        // $pdf = PDF::loadView('admin.invoice.pdf', $data);
+        // return $pdf->stream('invoice.pdf');
     }
 
     public function printPDF($id)
@@ -218,7 +220,7 @@ class InvoiceController extends Controller
             'services' => $invoice->services ? $invoice->services->toArray() : [],
             'materials' => $invoice->materials ? $invoice->materials->toArray() : [],
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
-            'total' => number_format($invoice->total(), 2),
+            'total' => $invoice->total(),
             'deposit' => $invoice->deposit,
             'priceInText' => $invoice->priceInText(),
             'print' => 1,
