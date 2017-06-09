@@ -172,11 +172,11 @@ class InvoiceController extends Controller
             'company1' => request('company_line_1') ? request('company_line_1') : '',
             'company2' => request('company_line_2') ? request('company_line_2') : '',
             'po' => request('po') ? request('po') : '',
-            'deposit' => $deposit,
             'services' => $services,
             'materials' => $materials,
             'materialTotal' => $materialTotal == 0 ? '' : number_format($materialTotal, 2),
-            'total' => number_format($total, 2),
+            'total' => $total,
+            'deposit' => $deposit,
             'priceInText' => $priceInText
         ];
 
