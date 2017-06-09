@@ -234,12 +234,12 @@
             <td class="end">
                 <span class="total-label">Total</span>
                 <span class="total">{{$total ? $total : '0.00'}}</span>
-                <br style="clear: both">
+                {{-- <br style="clear: both">
                 <span class="total-label" style="vertical-align: middle">Deposit</span>
-                {{-- <span class="total" style="vertical-align: middle">- {{ $deposit ? number_format($deposit, 2) : '0.00'}}</span> --}}
+                <span class="total" style="vertical-align: middle">- {{ $deposit ? number_format($deposit, 2) : '0.00'}}</span>
                 <hr>
                 <span class="total-label" style="vertical-align: middle">Balance</span>
-                <span class="total" style="vertical-align: middle">RM {{number_format($total - $deposit, 2)}}</span>
+                <span class="total" style="vertical-align: middle">RM {{number_format($total - $deposit, 2)}}</span> --}}
             </td>
         </tr>
     </table>
