@@ -88,7 +88,7 @@
         <div class="heading-line-3">CONTRACTOR OF HOUSES, RENOVATION & ETC</div>
         <div class="address">No.38, Jalan 21, Taman Sri Jelok, 43000 Kajang, Selangor Darul Ehsan</div>
         <div class="heading-footer">
-            Tel: 03-87405018
+            Tel: 012-2147883 / 03-87405018
             &nbsp;&nbsp;&nbsp;&nbsp;
             (Co.No: 00146542-H)
         </div>
