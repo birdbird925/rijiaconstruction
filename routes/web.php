@@ -5,8 +5,8 @@ Route::get('/', function () {
 });
 
 // Auth routes
-// Route::auth();
-Route::get('register', function(){abort(404);})->name('register');
+Route::auth();
+// Route::get('register', function(){abort(404);})->name('register');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
