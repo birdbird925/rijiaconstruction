@@ -99,13 +99,13 @@
     }
 
     .total-row .main {
-        width: calc(100% - 200px);
+        width: calc(100% - 180px);
         {{-- padding-left: 38px; --}}
         padding-left: 10px;
     }
 
     .total-row .end {
-        width: 200px;
+        width: 180px;
     }
 
     .total-row .total-label {
