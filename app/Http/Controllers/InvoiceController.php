@@ -201,10 +201,10 @@ class InvoiceController extends Controller
             'deposit' => $invoice->deposit,
             'priceInText' => $invoice->priceInText()
         ];
-        dd(number_format($invoice->total() - $invoice->deposit , 2));
+        // dd(number_format($invoice->total() - $invoice->deposit , 2));
 
-        // $pdf = PDF::loadView('admin.invoice.pdf', $data);
-        // return $pdf->stream('invoice.pdf');
+        $pdf = PDF::loadView('admin.invoice.pdf', $data);
+        return $pdf->stream('invoice.pdf');
     }
 
     public function printPDF($id)
