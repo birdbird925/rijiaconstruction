@@ -233,7 +233,7 @@
             </td>
             <td class="end">
                 <span class="total-label">Total</span>
-                <span class="total">{{$total ? $total : '0.00'}}</span>
+                <span class="total">{{$total ? number_format($total,2) : '0.00'}}</span>
                 <br style="clear: both">
                 <span class="total-label" style="vertical-align: middle">Deposit</span>
                 <span class="total" style="vertical-align: middle">- {{ $deposit ? number_format($deposit, 2) : '0.00'}}</span>
