@@ -5,7 +5,7 @@ require_once "vendor/autoload.php";
 //    By default dopmdf loads fonts to dompdf/lib/fonts
 //    If you have modified your font directory set this
 //    variable appropriately.
-$fontDir = "storage/fonts"
+$fontDir = "storage/fonts";
 // *** DO NOT MODIFY BELOW THIS POINT ***
 use Dompdf\Dompdf;
 use Dompdf\CanvasFactory;
@@ -72,7 +72,7 @@ function install_font_family($dompdf, $fontname, $normal, $bold = null, $italic 
   if ($last_dot !== false) {
     $file = substr($basename, 0, $last_dot);
     $ext = strtolower(substr($basename, $last_dot));
-  } else {
+} else {
     $file = $basename;
     $ext = '';
   }

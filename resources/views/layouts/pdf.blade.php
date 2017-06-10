@@ -11,25 +11,25 @@
         font-family: 'msyh';
         font-style: normal;
         font-weight: normal;
-        src: url(http://188.166.215.33/fonts/msyh.ttf) format('truetype');
+        src: url(http://rijiaconstruction.com/fonts/msyh.ttf) format('truetype');
     }
     @font-face {
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: normal;
-        src: url(http://188.166.215.33/fonts/OpenSans-Regular.ttf) format('truetype');
+        src: url(http://rijiaconstruction.com/fonts/OpenSans-Regular.ttf) format('truetype');
     }
     @font-face {
         font-family: 'Open Sans Bold';
         font-style: normal;
         font-weight: bold;
-        src: url(http://188.166.215.33/fonts/OpenSans-Bold.ttf) format('truetype');
+        src: url(http://rijiaconstruction.com/fonts/OpenSans-Bold.ttf) format('truetype');
     }
     @font-face {
         font-family: 'Open Sans ExtralBold';
         font-style: normal;
         font-weight: 800;
-        src: url(http://188.166.215.33/fonts/OpenSans-ExtraBold.ttf) format('truetype');
+        src: url(http://rijiaconstruction.com/fonts/OpenSans-ExtraBold.ttf) format('truetype');
     }
 
     body {
