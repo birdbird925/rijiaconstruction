@@ -179,6 +179,7 @@ return [
 
         Barryvdh\DomPDF\ServiceProvider::class,
         Riskihajar\Terbilang\TerbilangServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
 
     ],
 

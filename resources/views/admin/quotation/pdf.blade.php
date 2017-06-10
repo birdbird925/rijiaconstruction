@@ -75,7 +75,7 @@
     }
 
     .quotation-table .total-row td {
-        vertical-align: middle;
+        vertical-align: text-top;
     }
 
     .quotation-table .total-row .main {
