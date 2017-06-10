@@ -83,7 +83,7 @@
 </head>
 <body>
     <div class="heading">
-        <div class="heading-line-1">日嘉建築装修工程</div>
+        <div class="heading-line-1" style="font-family: 'msyh';">日嘉建築装修工程</div>
         <div class="heading-line-2">RI JIA CONSTRUCTION</div>
         <div class="heading-line-3">CONTRACTOR OF HOUSES, RENOVATION & ETC</div>
         <div class="address">No.38, Jalan 21, Taman Sri Jelok, 43000 Kajang, Selangor Darul Ehsan</div>
