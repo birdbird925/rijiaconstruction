@@ -11,7 +11,7 @@
                     </div>
                     <div class="form-group">
                         <label>Amount: </label>
-                        <input type="number" name="price" class="form-control" min="1" required>
+                        <input type="number" name="price" class="form-control" min="0" required>
                     </div>
                     <input type="hidden" name="action" value="create">
                 </div>

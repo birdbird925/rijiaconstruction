@@ -192,7 +192,7 @@
                     <td class="main">
                         {!!str_replace("{~and~}", "&", $service['text'])!!}
                     </td>
-                    <td class="end">{{number_format($service['price'],2)}}</td>
+                    <td class="end">{{$service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
                 </tr>
             @endforeach
             @if(sizeof($materials) != 0)
