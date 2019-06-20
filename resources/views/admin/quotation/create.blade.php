@@ -29,6 +29,10 @@
                 <input type="text" name="customer" class="form-control" value="Mr. Lee" default="Mr. Lee" required>
             </div>
             <div class="form-group">
+                <label>Company:</label>
+                <input type="text" name="company" class="form-control" palceholder="Company Name">
+            </div>
+            <div class="form-group">
                 <label>Title:</label>
                 <input type="text" name="title" class="form-control" value="House Renovation Quotation" default="House Renovation Quotation" required>
             </div>
@@ -47,8 +51,12 @@
                 <input type="text" name="tel" class="form-control">
             </div>
             <div class="form-group">
-                <label>Note:</label>
+                <label>Note {{ '(type <br> to make a new note line)'}}:</label>
                 <textarea name="note" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Discount:</label>
+                <input type="number" name="discount" class="form-control">
             </div>
             <div class="form-group">
                 <input type="checkbox" id="material-included" name="material-included" value="true" checked><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>

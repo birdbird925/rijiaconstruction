@@ -31,9 +31,11 @@
             </div>
             <div class="form-group">
                 <label>Company:</label>
-                <input type="text" name="company_line_1" class="form-control" placeholder="Company Line 1">
+                <input type="text" name="company" class="form-control" placeholder="Company Name" value="{{$quotation->company}}">
                 <br>
-                <input type="text" name="company_line_2" class="form-control" placeholder="Company Line 2">
+                <input type="text" name="company_line_1" class="form-control" placeholder="Company Address Line 1">
+                <br>
+                <input type="text" name="company_line_2" class="form-control" placeholder="Company Address Line 2">
             </div>
             <div class="form-group">
                 <label>PO No:</label>
@@ -42,6 +44,14 @@
             <div class="form-group">
                 <label>Deposit:</label>
                 <input type="number" name="deposit" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Discount:</label>
+                <input type="number" name="discount" class="form-control" value="{{$quotation->discount}}">
+            </div>
+            <div class="form-group">
+                <label>Note {{ '(type <br> to make a new note line)'}}:</label>
+                <textarea name="note" class="form-control" rows="3">{!!$quotation->note!!}</textarea>
             </div>
             <div class="form-group">
                 <input type="checkbox" id="material-included" name="material-included" value="{{$quotation->material_included ? 'true' : 'false'}}" {{$quotation->material_included ? 'checked' : 'false'}}><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>

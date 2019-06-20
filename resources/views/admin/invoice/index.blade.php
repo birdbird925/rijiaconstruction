@@ -33,8 +33,8 @@
                                 <td>{{$invoice->refNumber()}}</td>
                                 <td>{{substr($invoice->date, 0, 10)}}</td>
                                 <td>{{$invoice->to}}</td>
-                                <td>{{$invoice->company_line_1}}</td>
-                                <td>{{$invoice->total() - $invoice->deposit}}</td>
+                                <td>{{$invoice->company ? $invoice->company : $invoice->company_line_1}}</td>
+                                <td>{{$invoice->total() - $invoice->deposit - ($invoice->discount ? $invoice->discount : 0)}}</td>
                                 <td class="table-control">
                                     <a href="/admin/invoice/{{$invoice->id}}/edit"><i class="fa fa-pencil"></i></a>
                                     <a href="/admin/invoice/{{$invoice->id}}/pdf"><i class="fa fa-eye"></i></a>

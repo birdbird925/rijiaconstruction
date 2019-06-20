@@ -53,7 +53,7 @@ $(function() {
         updatePreview();
     });
 
-    $('input[name=title], input[name=customer], input[name=company_line_1], input[name=company_line_2], input[name=po], input[name=address_line_1], input[name=address_line_2], input[name=email], input[name=tel], textarea[name=note], input[name=deposit]').on('change', function() {
+    $('input[name=title], input[name=customer], input[name=company_line_1], input[name=company_line_2], input[name=po], input[name=address_line_1], input[name=address_line_2], input[name=email], input[name=tel], textarea[name=note], input[name=deposit], input[name=discount], input[name=company]').on('change', function() {
         var value = $(this).val();
         var defaultValue = $(this).attr('default');
         if(value == '')

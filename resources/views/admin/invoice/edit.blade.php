@@ -34,6 +34,8 @@
             </div>
             <div class="form-group">
                 <label>Company:</label>
+                <input type="text" name="company" class="form-control" placeholder="Company Name" value="{{$invoice->company}}">
+                <br>
                 <input type="text" name="company_line_1" class="form-control" value="{{$invoice->company_line_1}}">
                 <br>
                 <input type="text" name="company_line_2" class="form-control" value="{{$invoice->company_line_2}}">
@@ -45,6 +47,14 @@
             <div class="form-group">
                 <label>Deposit:</label>
                 <input type="number" name="deposit" class="form-control" value={{$invoice->deposit}}>
+            </div>
+            <div class="form-group">
+                <label>Discount:</label>
+                <input type="number" name="discount" class="form-control" value="{{$invoice->discount}}">
+            </div>
+            <div class="form-group">
+                <label>Note {{ '(type <br> to make a new note line)'}}:</label>
+                <textarea name="note" class="form-control" rows="3">{!!$invoice->note!!}</textarea>
             </div>
             <div class="form-group">
                 <input type="checkbox" id="material-included" name="material-included" value="{{$invoice->material_included ? 'true' : 'false'}}" {{$invoice->material_included ? 'checked' : 'false'}}><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>

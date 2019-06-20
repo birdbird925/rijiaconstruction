@@ -30,6 +30,10 @@ class Invoice extends Model
 
         if(!$this->material_included)
             $total += $this->materialTotal();
+
+        // if($this->discount)
+        //     $total -= $this->discount;
+            
         return $total;
     }
 
@@ -43,7 +47,7 @@ class Invoice extends Model
 
     public function priceInText()
     {
-        $priceInText = preg_replace('/,+/', '', Terbilang::make($this->total() - $this->deposit, ' ONLY'));
+        $priceInText = preg_replace('/,+/', '', Terbilang::make($this->total() - $this->deposit - ($this->discount ? $this->discount : 0), ' ONLY'));
         return strtoupper($priceInText);
     }
 

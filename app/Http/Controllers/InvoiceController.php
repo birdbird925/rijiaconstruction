@@ -40,10 +40,13 @@ class InvoiceController extends Controller
             'quotation_id' => request('quotation'),
             'date' => Carbon::createFromFormat('m/d/Y', request('date')),
             'to' => request('customer'),
+            'company' => request('company'),
             'company_line_1' => request('company_line_1'),
             'company_line_2' => request('company_line_2'),
             'purchase_order' => request('po'),
             'deposit' => request('deposit'),
+            'discount' => request('discount'),
+            'note' => request('note'),
             'material_included' => request('material-included') == 'true' ? 1 : 0,
         ]);
 
@@ -91,10 +94,13 @@ class InvoiceController extends Controller
         $invoice = Invoice::findOrFail($id);
         $invoice->date = Carbon::createFromFormat('m/d/Y', request('date'));
         $invoice->to = request('customer');
+        $invoice->company = request('company');
         $invoice->company_line_1 = request('company_line_1');
         $invoice->company_line_2 = request('company_line_2');
         $invoice->purchase_order = request('po');
         $invoice->deposit = request('deposit');
+        $invoice->discount = request('discount');
+        $invoice->note = request('note');
         $invoice->material_included = request('material-included') == 'true' ? 1 : 0;
         $invoice->update();
 
@@ -169,9 +175,12 @@ class InvoiceController extends Controller
             'id' => 'NEW',
             'date' => request('date') ? request('date') : '',
             'customer' => request('customer') ? request('customer') : $quotation->to,
-            'company1' => request('company_line_1') ? request('company_line_1') : '',
-            'company2' => request('company_line_2') ? request('company_line_2') : '',
+            'company' => request('company') ? request('company') : $quotation->company,
+            'company1' => request('company_line_1') ? request('company_line_1') : $quotation->company_line_1,
+            'company2' => request('company_line_2') ? request('company_line_2') : $quotation->company_line_2,
             'po' => request('po') ? request('po') : '',
+            'discount' => request('discount') ? request('discount') : $quotation->discount,
+            'note' => request('note') ? request('note') : $quotation->note,
             'services' => $services,
             'materials' => $materials,
             'materialTotal' => $materialTotal == 0 ? '' : number_format($materialTotal, 2),
@@ -191,6 +200,7 @@ class InvoiceController extends Controller
             'id' => $invoice->refNumber(),
             'date' => Carbon::createFromFormat('Y-m-d H:i:s', $invoice->date)->format('m/d/Y'),
             'customer' => $invoice->to,
+            'company' => $invoice->company,
             'company1' => $invoice->company_line_1,
             'company2' => $invoice->company_line_2,
             'po' => $invoice->purchase_order,
@@ -199,6 +209,8 @@ class InvoiceController extends Controller
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
             'total' => $invoice->total(),
             'deposit' => $invoice->deposit,
+            'discount' => $invoice->discount,
+            'note' => $invoice->note,
             'priceInText' => $invoice->priceInText()
         ];
         // dd(number_format($invoice->total() - $invoice->deposit , 2));
@@ -214,6 +226,7 @@ class InvoiceController extends Controller
             'id' => $invoice->refNumber(),
             'date' => Carbon::createFromFormat('Y-m-d H:i:s', $invoice->date)->format('m/d/Y'),
             'customer' => $invoice->to,
+            'company' => $invoice->company,
             'company1' => $invoice->company_line_1,
             'company2' => $invoice->company_line_2,
             'po' => $invoice->purchase_order,
@@ -222,6 +235,8 @@ class InvoiceController extends Controller
             'materialTotal' => $invoice->material_included == 1 ? '' : number_format($invoice->materialTotal(), 2),
             'total' => $invoice->total(),
             'deposit' => $invoice->deposit,
+            'discount' => $invoice->discount,
+            'note' => $invoice->note,
             'priceInText' => $invoice->priceInText(),
             'print' => 1,
         ];

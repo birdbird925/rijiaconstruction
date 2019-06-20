@@ -149,9 +149,9 @@
                 <div class="customer">
                     {{str_replace("{~and~}", "&", $customer)}}
                 </div>
-                {{str_replace("{~and~}", "&", $company1)}}
-                <br>
-                {{str_replace("{~and~}", "&", $company2)}}
+                {!! $company ? str_replace("{~and~}", "&", $company).'<br>' : ''!!}
+                {!! $company1 ? str_replace("{~and~}", "&", $company1).'<br>' : ''!!}
+                {!! $company2 ? str_replace("{~and~}", "&", $company2) : ''!!}
             </td>
             <td class=end>
                 <div class="invoice-row">
@@ -237,12 +237,23 @@
                 <br style="clear: both">
                 <span class="total-label" style="vertical-align: middle">Deposit</span>
                 <span class="total" style="vertical-align: middle">- {{ $deposit ? number_format($deposit, 2) : '0.00'}}</span>
+                @if($discount)
+                <br style="clear: both">
+                <span class="total-label" style="vertical-align: middle">Discount</span>
+                <span class="total" style="vertical-align: middle">- {{ $discount ? number_format($discount, 2) : '0.00'}}</span>
+                @endif
                 <hr>
                 <span class="total-label" style="vertical-align: middle">Balance</span>
-                <span class="total" style="vertical-align: middle">RM {{number_format($total - $deposit, 2)}}</span>
+                <span class="total" style="vertical-align: middle">RM {{number_format($total - $deposit - ($discount ? $discount : 0), 2)}}</span>
             </td>
         </tr>
     </table>
+
+    @if($note)
+        <div class="note" style="padding-left: 20px; margin-top: 20px;">
+            {!!$note!!}
+        </div>
+    @endif
 
     <div class="sign">
         <div class="company">

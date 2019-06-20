@@ -32,6 +32,10 @@
                 <input type="text" name="customer" class="form-control" value="{{$quotation->to}}" default="{{$quotation->to}}" required>
             </div>
             <div class="form-group">
+                <label>Company:</label>
+                <input type="text" name="company" class="form-control" value="{{$quotation->company}}" palceholder="Company Name">
+            </div>
+            <div class="form-group">
                 <label>Title:</label>
                 <input type="text" name="title" class="form-control" value="{{$quotation->title}}" default="{{$quotation->title}}" required>
             </div>
@@ -50,8 +54,12 @@
                 <input type="text" name="tel" class="form-control" value="{{$quotation->tel}}">
             </div>
             <div class="form-group">
-                <label>Note:</label>
+                <label>Note {{ '(type <br> to make a new note line)'}}:</label>
                 <textarea name="note" class="form-control" rows="3">{!!$quotation->note!!}</textarea>
+            </div>
+            <div class="form-group">
+                <label>Discount:</label>
+                <input type="number" name="discount" class="form-control" value="{{$quotation->discount}}">
             </div>
             <div class="form-group">
                 <input type="checkbox" id="material-included" name="material-included" value="{{$quotation->material_included ? 'true' : 'false'}}" {{$quotation->material_included ? 'checked' : 'false'}}><label for="material-included" style="margin-left: 10px;"> Material cost was included</label>

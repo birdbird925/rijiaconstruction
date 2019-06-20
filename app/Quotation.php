@@ -29,6 +29,10 @@ class Quotation extends Model
 
         if(!$this->material_included)
             $total += $this->materialTotal();
+        
+        if($this->discount) 
+            $total -= $this->discount;
+
         return $total;
     }
 

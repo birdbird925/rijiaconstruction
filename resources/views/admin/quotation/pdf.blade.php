@@ -108,6 +108,7 @@
             <td class="label-separator">:</td>
             <td class="main">
                 {{$customer ? str_replace("{~and~}", "&", $customer) : 'Mr. Lee'}}
+                {!! $company ? '<br>'.str_replace("{~and~}", "&", $company) : ''!!}
                 {!! $tel ? '<br>'.str_replace("{~and~}", "&", $tel).' ' : '' !!}
                 {!! $email ? '<br>'.str_replace("{~and~}", "&", $email) : '' !!}
             </td>
@@ -166,6 +167,14 @@
             <td class="main">TOTAL</td>
             <td class="end"><span class="total">{{$total ? $total : '0.00'}}</span></td>
         </tr>
+        @if($discount)
+            <tr class="total-row">
+                <td class="label"></td>
+                <td class="label-separator"></td>
+                <td class="main">Discount</td>
+                <td class="end"><span class="total">- {{$discount}}</span></td>
+            </tr>
+        @endif
     </table>
 
     @if($note)
