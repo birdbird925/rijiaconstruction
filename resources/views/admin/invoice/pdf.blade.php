@@ -181,7 +181,7 @@
             </tr>
         </table>
         <table class="invoice-table">
-            @foreach($services as $service)
+            @foreach($services as $index => $service)
                 <tr class="item-row">
                     <td class="label">
                         <span>
@@ -194,6 +194,11 @@
                     </td>
                     <td class="end">{{$service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
                 </tr>
+                @if(($index+1) % 9 == 0)
+                    </table>
+                    <div class="page-break"></div>
+                    <table class="invoice-table">
+                @endif
             @endforeach
             @if(sizeof($materials) != 0)
                 <tr class="item-row">

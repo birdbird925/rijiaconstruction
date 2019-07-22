@@ -131,7 +131,8 @@
             <td class="main"></td>
             <td class="end">Amount</td>
         </tr>
-        @foreach($services as $service)
+        @foreach($services as $index => $service)
+            {{-- <tr class="item-row {{$index % 5 == 0 ? 'break-now' : ''}}"> --}}
             <tr class="item-row">
                 <td class="label">{{$loop->iteration}}</td>
                 <td class="label-separator"></td>

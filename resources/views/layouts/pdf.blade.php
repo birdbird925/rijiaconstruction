@@ -78,6 +78,9 @@
         padding-top: 10px;
         border-top: 1px solid #000;
     }
+    .page-break {
+        page-break-after: always;
+    }
     @yield('style')
     </style>
 </head>
