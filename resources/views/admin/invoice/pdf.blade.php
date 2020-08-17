@@ -148,7 +148,6 @@
             <td class="main">
                 <div class="customer">
                     {{str_replace("{~and~}", "&", $customer)}}
-                    {{$invoice_id}}
                 </div>
                 {!! $company ? str_replace("{~and~}", "&", $company).'<br>' : ''!!}
                 {!! $company1 ? str_replace("{~and~}", "&", $company1).'<br>' : ''!!}
@@ -196,15 +195,7 @@
                     <td class="end">{{$service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
                 </tr>
                 @if($invoice_id == '148')
-                    @if($index == 0 && ($index+1) % 13 == 0) 
-                        </table>
-                        <div class="page-break"></div>
-                        <table class="invoice-table">
-                    @elseif($index == 1 && ($index+1) % 15 == 0)
-                        </table>
-                        <div class="page-break"></div>
-                        <table class="invoice-table">
-                    @elseif($index != 0 && $index != 1 &&($index+1) % 9 == 0)
+                    @if($index == 13 || $index == 28) 
                         </table>
                         <div class="page-break"></div>
                         <table class="invoice-table">
