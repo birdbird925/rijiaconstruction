@@ -194,10 +194,26 @@
                     </td>
                     <td class="end">{{$service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
                 </tr>
-                @if(($index+1) % 9 == 0)
-                    </table>
-                    <div class="page-break"></div>
-                    <table class="invoice-table">
+                @if($invoice_id == '148')
+                    @if($index == 0 && ($index+1) % 13 == 0) 
+                        </table>
+                        <div class="page-break"></div>
+                        <table class="invoice-table">
+                    @elseif($index == 1 && ($index+1) % 15 == 0)
+                        </table>
+                        <div class="page-break"></div>
+                        <table class="invoice-table">
+                    @elseif($index != 0 && $index != 1 &&($index+1) % 9 == 0)
+                        </table>
+                        <div class="page-break"></div>
+                        <table class="invoice-table">
+                    @endif
+                @else 
+                    @if(($index+1) % 9 == 0)
+                        </table>
+                        <div class="page-break"></div>
+                        <table class="invoice-table">
+                    @endif
                 @endif
             @endforeach
             @if(sizeof($materials) != 0)

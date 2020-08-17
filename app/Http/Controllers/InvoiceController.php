@@ -211,7 +211,8 @@ class InvoiceController extends Controller
             'deposit' => $invoice->deposit,
             'discount' => $invoice->discount,
             'note' => $invoice->note,
-            'priceInText' => $invoice->priceInText()
+            'priceInText' => $invoice->priceInText(),
+            'invoice_id' => $id,
         ];
         // dd(number_format($invoice->total() - $invoice->deposit , 2));
 
