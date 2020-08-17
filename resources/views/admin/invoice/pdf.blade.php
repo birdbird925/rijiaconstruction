@@ -195,7 +195,7 @@
                     <td class="end">{{$service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
                 </tr>
                 @if($invoice_id == '148')
-                    @if($index == 13 || $index == 28) 
+                    @if($index == 12) 
                         </table>
                         <div class="page-break"></div>
                         <table class="invoice-table">
