@@ -194,6 +194,7 @@
                     </td>
                     <td class="end">{{$service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
                 </tr>
+                {{$invoice_id}}
                 @if($invoice_id == '148')
                     @if($index == 0 && ($index+1) % 13 == 0) 
                         </table>
