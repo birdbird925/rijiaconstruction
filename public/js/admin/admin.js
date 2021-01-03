@@ -161,6 +161,7 @@ $(function() {
             form.find('input').val('');
             form.find('input[name=action]').val('create');
             form.find('textarea').focus();
+            form.find('input[type=checkbox]').prop('checked', false);
         }
         else {
             $(target).find('.'+type).html(text);
