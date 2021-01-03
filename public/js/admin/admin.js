@@ -82,7 +82,12 @@ $(function() {
             var input = $(this).attr('data-input');
             var value = $(this).attr('value');
             value = value.replace(/\<br>/g, '\n');
-            $(input).val(value);
+            if(input == 'input[name=linebreak]') {
+                $(input).prop('checked', value == 1);
+            }
+            else {
+                $(input).val(value);
+            }
         });
     });
 
