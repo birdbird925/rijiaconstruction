@@ -13,6 +13,10 @@
                         <label>Amount: </label>
                         <input type="number" name="price" class="form-control" min="0" required>
                     </div>
+                    <div class="form-group">
+                        <input id="linebreak" type="checkbox" value="1" name="linebreak">
+                        <label for="linebreak">New page after this item</label>
+                    </div>
                     <input type="hidden" name="action" value="create">
                 </div>
                 <div class="modal-footer">

@@ -56,7 +56,8 @@ class InvoiceController extends Controller
                     'form_id' => $invoice->id,
                     'form_type' => 'App\Invoice',
                     'text' => $service['text'],
-                    'price' => $service['price']
+                    'price' => $service['price'],
+                    'linebreak' => $service['linebreak']
                 ]);
             }
         }
