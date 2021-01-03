@@ -167,7 +167,12 @@ $(function() {
             $(target).find('.inputText').val(text);
             $(target).find('.price').html('RM'+price);
             $(target).find('.inputPrice').val(price);
-            $(target).find('#linebreak').prop('checked',linebreak);
+            if(linebreak == 1) {
+                $(target).find('#linebreak').prop('checked',true);
+            }
+            else {
+                $(target).find('#linebreak').prop('checked',false;
+            }
 
             if(type == "material") {
                 $(target).find('.price').html('RM'+(price * quantity));
