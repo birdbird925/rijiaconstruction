@@ -109,6 +109,10 @@ $(function() {
         var quantity = form.find('input[name=quantity]').val();
         var unit = form.find('input[name=unit]').val();
         var price = form.find('input[name=price]').val();
+        var linebreak = 0;
+        if(form.find('input[name=linebreak]').prop("checked") == true) {
+            linebreak = 1;
+        }
         var count = $('.'+type+'-item').length;
 
         // validation
@@ -147,6 +151,7 @@ $(function() {
         }
         html +=     '<input type="hidden" class="inputText" name="'+type+'['+count+'][text]" value="'+text+'" data-input="textarea[name='+type+']">';
         html +=     '<input type="hidden" class="inputPrice" name="'+type+'['+count+'][price]" value="'+price+'" data-input="input[name=price]">';
+        html +=     '<input type="hidden" class="inputLinebreak name="'+type+'['+count+'][]" value="'+linebreak+'" data-input="input[name=linebreak]">';
         html +=     '<span class="update-target" data-target="#'+type+'-'+count+'"></span>';
         html += '</div>';
 
@@ -162,6 +167,7 @@ $(function() {
             $(target).find('.inputText').val(text);
             $(target).find('.price').html('RM'+price);
             $(target).find('.inputPrice').val(price);
+            $(target).find('#linebreak').prop('checked',linebreak);
 
             if(type == "material") {
                 $(target).find('.price').html('RM'+(price * quantity));
@@ -169,7 +175,6 @@ $(function() {
                 $(target).find('.inputQuantity').val(quantity);
                 $(target).find('.unit').html(unit);
                 $(target).find('.inputUnit').val(unit);
-
             }
 
             $('#'+type+'Modal').modal('toggle');
