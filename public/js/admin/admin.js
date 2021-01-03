@@ -171,7 +171,7 @@ $(function() {
                 $(target).find('#linebreak').prop('checked',true);
             }
             else {
-                $(target).find('#linebreak').prop('checked',false;
+                $(target).find('#linebreak').prop('checked',false);
             }
 
             if(type == "material") {
