@@ -151,7 +151,7 @@ $(function() {
         }
         html +=     '<input type="hidden" class="inputText" name="'+type+'['+count+'][text]" value="'+text+'" data-input="textarea[name='+type+']">';
         html +=     '<input type="hidden" class="inputPrice" name="'+type+'['+count+'][price]" value="'+price+'" data-input="input[name=price]">';
-        html +=     '<input type="hidden" class="inputLinebreak name="'+type+'['+count+'][]" value="'+linebreak+'" data-input="input[name=linebreak]">';
+        html +=     '<input type="hidden" class="inputLinebreak" name="'+type+'['+count+'][linebreak]" value="'+linebreak+'" data-input="input[name=linebreak]">';
         html +=     '<span class="update-target" data-target="#'+type+'-'+count+'"></span>';
         html += '</div>';
 

@@ -194,7 +194,11 @@
                     </td>
                     <td class="end">{{$service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
                 </tr>
-                @if($invoice_id == '148')
+                @if($invoice_id >= 169 && $service['linebreak'])
+                    </table>
+                    <div class="page-break"></div>
+                    <table class="invoice-table">
+                @elseif($invoice_id == '148')
                     @if($index == 12) 
                         </table>
                         <div class="page-break"></div>
