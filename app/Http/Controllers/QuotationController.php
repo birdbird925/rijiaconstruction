@@ -99,6 +99,7 @@ class QuotationController extends Controller
         DB::table('services')->where('form_id', $quotation->id)->where('form_type', 'App\Quotation')->delete();
         DB::table('materials')->where('form_id', $quotation->id)->where('form_type', 'App\Quotation')->delete();
 
+        dd(request('service'));
         if(request('service') != '') {
             foreach(request('service') as $service) {
                 $service = Service::create([
