@@ -51,7 +51,8 @@ class QuotationController extends Controller
                     'form_id' => $quotation->id,
                     'form_type' => 'App\Quotation',
                     'text' => $service['text'],
-                    'price' => $service['price']
+                    'price' => $service['price'],
+                    'linebreak' => $service['linebreak']
                 ]);
             }
         }
@@ -104,7 +105,8 @@ class QuotationController extends Controller
                     'form_id' => $quotation->id,
                     'form_type' => 'App\Quotation',
                     'text' => $service['text'],
-                    'price' => $service['price']
+                    'price' => $service['price'],
+                    'linebreak' => $service['linebreak']
                 ]);
             }
         }
