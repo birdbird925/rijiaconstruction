@@ -141,6 +141,11 @@
                 </td>
                 <td class="end">{{ $service['price'] > 0 ? number_format($service['price'],2) : ''}}</td>
             </tr>
+            @if($service['linebreak'] == 1)
+                </table>
+                <div class="page-break"></div>
+                <table class="quotation-table">
+            @endif
         @endforeach
         <tr class="material-row">
             <td class="label"></td>
