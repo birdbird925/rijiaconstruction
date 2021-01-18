@@ -86,6 +86,7 @@
                             </div>
                             <input type="hidden" class="inputText" name="service[{{$key}}][text]" value="{{$service->text}}" data-input="textarea[name=service]">
                             <input type="hidden" class="inputPrice" name="service[{{$key}}][price]" value="{{$service->price}}" data-input="input[name=price]">
+                            <input type="hidden" class="inputLinebreak" name="service[{{$key}}][linebreak]" value="{{$service->linebreak}}" data-input="input[name=linebreak]">
                             <span class="update-target" data-target="#service-{{$key}}"></span>
                         </div>
                     @endforeach
