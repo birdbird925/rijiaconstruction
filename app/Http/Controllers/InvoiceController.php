@@ -57,7 +57,7 @@ class InvoiceController extends Controller
                     'form_type' => 'App\Invoice',
                     'text' => $service['text'],
                     'price' => $service['price'],
-                    'linebreak' => $service['linebreak']
+                    'linebreak' => isset($service['linebreak']) ? $service['linebreak'] : 0
                 ]);
             }
         }
@@ -115,7 +115,7 @@ class InvoiceController extends Controller
                     'form_type' => 'App\Invoice',
                     'text' => $service['text'],
                     'price' => $service['price'],
-                    'linebreak' => $service['linebreak']
+                    'linebreak' => isset($service['linebreak']) ? $service['linebreak'] : 0
                 ]);
             }
         }
